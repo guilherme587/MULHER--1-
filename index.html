@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulher[-1]</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="main">
+        <h1>MULHER[-1]</h1>
+        <div id="code">0000000000000</div>
+        <div id="camera"></div>
+        <h2>ESTOQUE</h2>
+        <div id="lista"></div>
+    </div>
+    <div id="add">
+        <p>quatidade</p>
+        <input id="quatidade" type="text" name="" id="">
+        <p>valor</p>
+        <input id="valor" type="text" name="" id="">
+        <button id="addButton" type="button">ADD</button>
+    </div>
+
+    
+
+    <script src="./quagga.min.js"></script>
+    <script>
+        Quagga.init({
+            inputStream: {
+                name: "Live",
+                type: "LiveStream",
+                target: document.querySelector('#camera')
+            },
+            decoder: {
+                readers: ["code_128_reader"]
+            }
+        }, function (err) {
+            if (err) {
+                console.log(err);
+                return
+            }
+            console.log("Initialization finished. Ready to start");
+            Quagga.start();
+        });
+
+        Quagga.onDetected(function (data) {
+            console.log(data);
+            document.querySelector('#code').innerHTML = data.codeResult.code;
+        });
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

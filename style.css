@@ -1,0 +1,55 @@
+body{
+    display: grid;
+    margin: auto;
+    justify-content: center;
+    background-color:rgb(226, 226, 226);
+    width: 50%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, div #code{
+    text-align: center;
+}
+
+p{
+    margin: 0px;
+    font-weight: bolder;
+}
+
+#code{
+    border-radius: 30px;
+    width: 400px;
+    padding: 20px;
+    background-color: red;
+    color: white;
+    font-size: 3rem;
+    font-weight: bolder;
+    overflow: hidden;
+}
+
+#camera, #lista, #code{
+    display: block;
+    margin: auto;
+}
+
+#main{
+    background-color: rgb(168, 168, 168);
+    margin: 20px;
+    align-items: center;
+}
+
+#camera {
+    width: 640px;
+    height: 360px;
+    overflow: hidden;
+}
+
+#table tr:nth-child(even){background-color: #0000ff;}
+
+#table tr:hover {background-color: #a70101;}
+
+#add{
+    display: grid;
+    margin: auto;
+}
